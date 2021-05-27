@@ -10,7 +10,7 @@ console = pexpect.spawn("bash")
 
 @app.route('/<device>', methods=["POST"])
 def color(device):
-    req_dict = request.get_json()
+    req_dict = request.form.to_dict()
     color_dict = req_dict.get('color', None)
     brightness_val = req_dict.get('brightness', None)
     try:
